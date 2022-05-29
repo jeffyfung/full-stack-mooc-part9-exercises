@@ -1,5 +1,4 @@
-const calculateBMI = (...args: number[]): string => {
-  let [height, weight] = args;
+const calculateBMI = (height: number, weight: number): string => {
   let score = weight / (height / 100) ** 2;
   if (score < 18.5) {
     return 'underweight';
@@ -28,7 +27,7 @@ const parseArgument = (args: Array<string>): Array<any> => {
 
 try {
   let args = parseArgument(process.argv);
-  console.log(calculateBMI(...args));
+  console.log(calculateBMI(args[0], args[1]));
 } catch (error: unknown) {
   let errorMessage = 'something bad happened';
   if (error instanceof Error) {
@@ -37,4 +36,4 @@ try {
   console.log(errorMessage);
 }
 
-export {};
+export { calculateBMI };
