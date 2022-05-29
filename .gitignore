@@ -5,3 +5,6 @@ build/
 
 # env files
 .env
+
+# api tests
+thunder-tests/

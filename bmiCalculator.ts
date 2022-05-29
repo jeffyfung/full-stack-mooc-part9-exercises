@@ -12,28 +12,28 @@ const calculateBMI = (height: number, weight: number): string => {
   return 'obese';
 };
 
-const parseArgument = (args: Array<string>): Array<any> => {
-  if (args.length != 4) throw new Error('incorrect number of arguments');
+// const parseArgument = (args: Array<string>): Array<any> => {
+//   if (args.length != 4) throw new Error('incorrect number of arguments');
 
-  const height: number = Number(args[2]);
-  const weight: number = Number(args[3]);
+//   const height: number = Number(args[2]);
+//   const weight: number = Number(args[3]);
 
-  // check if height or weight is NaN
-  if (isNaN(height) || isNaN(weight)) {
-    throw new Error('weight and height should be numbers');
-  }
-  return [height, weight];
-};
+//   // check if height or weight is NaN
+//   if (isNaN(height) || isNaN(weight)) {
+//     throw new Error('weight and height should be numbers');
+//   }
+//   return [height, weight];
+// };
 
-try {
-  let args = parseArgument(process.argv);
-  console.log(calculateBMI(args[0], args[1]));
-} catch (error: unknown) {
-  let errorMessage = 'something bad happened';
-  if (error instanceof Error) {
-    errorMessage += ` Error: ${error.message}`;
-  }
-  console.log(errorMessage);
-}
+// try {
+//   let args = parseArgument(process.argv);
+//   console.log(calculateBMI(args[0], args[1]));
+// } catch (error: unknown) {
+//   let errorMessage = 'something bad happened';
+//   if (error instanceof Error) {
+//     errorMessage += ` Error: ${error.message}`;
+//   }
+//   console.log(errorMessage);
+// }
 
 export { calculateBMI };
